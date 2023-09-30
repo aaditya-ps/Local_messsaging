@@ -71,11 +71,11 @@ function appendToLocalList(inputRawArr){
 
     let arrayValue = inputRawArr[1]
 
+    let createLists = document.createElement("li")
+
     let toinp = inputto.value
 
     let froinp = inputfrom.value
-
-    let createLists = document.createElement("li")
 
     createLists.textContent = `${toinp} Sent ${arrayValue} to  ${froinp}`
 
