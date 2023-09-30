@@ -49,6 +49,7 @@
 body{
     margin: 10px;
     background-color: #483c32;
+    user-select: none;
 }
 
 .maindiv{
