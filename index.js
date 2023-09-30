@@ -73,7 +73,7 @@ function appendToLocalList(inputRawArr){
 
     let createLists = document.createElement("li")
 
-    createLists.textContent = `${arrayValue}]`
+    createLists.textContent = `${arrayValue}`
 
     ullist.append(createLists)
 
