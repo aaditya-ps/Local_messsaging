@@ -3,20 +3,32 @@
     padding: 10px 10px 10px 10px;;
     resize: none;
     background-color: #F0F8FF;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.3);
 }
 
 .tofro{
     height: 40px;
     width: 140px;
-    border-radius: 6px;
     background-color: #F0F8FF;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.3);
 }
 
 .send{
     height: 40px;
     width: 140px;
+    background-color:rgb(146, 240, 122);
     border-radius: 6px;
+    border: none;
+    box-shadow: 2px 4px 4px rgba(0,0,0,0.3);
     
+}
+
+.send:hover{
+    background-color:rgb(138, 241, 11);
 }
 
 .secdiv{
