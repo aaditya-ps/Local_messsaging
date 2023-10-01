@@ -99,7 +99,7 @@ function displayelements(receiverfin,messafin,senderfin){
     <p id="sentid">To ${receiverfin}</p>
     <p id="messid">${messafin}</p>
     <p id="senderid">From ${senderfin}</p>
-    > </div> `
+    </div> `
 
     messele.innerHTML += displayItems
 
@@ -109,7 +109,7 @@ function displayelements(receiverfin,messafin,senderfin){
 
         let displayItems = `<div class="unlist" id="ull">
     <p id="messid">${messafin}</p>
-    > </div> `
+    </div> `
 
     messele.innerHTML += displayItems
 
