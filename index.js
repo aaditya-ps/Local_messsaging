@@ -93,14 +93,30 @@ onValue(msgInDb, function(snapshot){
 
 function displayelements(receiverfin,messafin,senderfin){ 
 
+    if ( receiverfin != "" && senderfin != ""){
 
-
-    let displayItems = `<div class="unlist" id="ull">
+        let displayItems = `<div class="unlist" id="ull">
     <p id="sentid">To ${receiverfin}</p>
     <p id="messid">${messafin}</p>
     <p id="senderid">From ${senderfin}</p>
     > </div> `
 
     messele.innerHTML += displayItems
+
+    }
+
+    else{
+
+        let displayItems = `<div class="unlist" id="ull">
+    <p id="messid">${messafin}</p>
+    > </div> `
+
+    messele.innerHTML += displayItems
+
+    }
+
+
+
+    
 
 }
