@@ -1,5 +1,5 @@
 #mainform{
-    margin: 10px 10px 40px 10px;
+    margin: 10px 10px 15px 10px;
     padding: 10px 10px 10px 10px;;
     resize: none;
     background-color: #F0F8FF;
@@ -9,7 +9,7 @@
 }
 
 .tofro{
-    height: 40px;
+    height: 35px;
     width: 140px;
     background-color: #F0F8FF;
     border-radius: 6px;
@@ -18,7 +18,7 @@
 }
 
 .send{
-    height: 40px;
+    height: 35px;
     width: 140px;
     background-color:rgb(146, 240, 122);
     border-radius: 6px;
@@ -50,10 +50,13 @@ body{
     margin: 10px;
     background-color: #483c32;
     user-select: none;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden
 }
 
 .maindiv{
-    margin: 10% auto 10% auto;
+    margin: auto auto auto auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,28 +69,47 @@ body{
     border-radius: 5px;
 }
 
-ul{
+#messdiv{
+    height: 260px;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     color: black;
     list-style: none;
     gap: 10px;
     padding: 25px;
     margin: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.6);
 
 }
 
-li{
+
+.unlist{
+    margin: 20px;
+    height: fit-content;
+    width:fit-content;
     margin:2px;
-    background-color: #ffd38b;
+    background-color: #fed799;
     padding: 10px;
     border-radius: 6px;
     border: none;
     box-shadow: 2px 4px 4px rgba(0,0,0,0.3);
 
 }
-li:hover{
+.unlist:hover{
     background-color: crimson;
     color:white;
 }
+
+#sentid, #senderid{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 11px;
+    }
+
+#messid{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    font-weight: bold;
+    }

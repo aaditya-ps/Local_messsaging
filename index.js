@@ -22,23 +22,37 @@ let inputfrom = document.getElementById("inpfrom")
 
 const btnsend = document.getElementById("btn1")
 
-let ullist = document.getElementById("ull")
+let messele = document.getElementById("messdiv")
 
 // basic elements linked
 
 btnsend.addEventListener("click", function(){
     
+    let toval = inputto.value
+
+    let froval = inputfrom.value
+
     let inpval = text1.value
 
-    push(msgInDb, inpval)
+    let finval = {
+        "receiver" : toval,
+        "messa" : inpval,
+        "sender" : froval
+
+    }
+
+    push(msgInDb, finval,)
 
     clearinpvalue()
+
 })
 
 function clearinpvalue(){
 
     text1.value = ""
-
+    inputto.value = ""
+    inputfrom.value = ""
+    
 }
 
 onValue(msgInDb, function(snapshot){
@@ -48,55 +62,45 @@ onValue(msgInDb, function(snapshot){
 
         let objToArray = Object.entries(snapshot.val())
 
-        deletePrevUl()
+        messele.innerHTML = ""
 
         for (let i=0; i<objToArray.length;i++){
 
             let arrayWithIdValue = objToArray[i]
 
-            appendToLocalList(arrayWithIdValue)
+            let arrayWithId = arrayWithIdValue[0]
+
+            let arrayWithValue = arrayWithIdValue[1]
+
+            // now we extract values from the array created with 'arrayWithValue'
+
+            let receiverfin = arrayWithValue.receiver
+
+            let messafin = arrayWithValue.messa
+
+            let senderfin = arrayWithValue.sender
+
+            displayelements(receiverfin, messafin, senderfin)
         }
         
     }
 
     else{
-        ullist.textContent = "Feel the fire? Make the first move!"
+        messele.textContent = "Feel the fire? Make the first move!"
     }
 }
 )
 
-function appendToLocalList(inputRawArr){ 
-
-    let arrayId = inputRawArr[0]
-
-    let arrayValue = inputRawArr[1]
-
-    let createLists = document.createElement("li")
-
-    createLists.textContent = `${arrayValue}`
-
-    ullist.append(createLists)
+function displayelements(receiverfin,messafin,senderfin){ 
 
 
 
-    //deleting on double click
+    let displayItems = `<div class="unlist" id="ull">
+    <p id="sentid">To ${receiverfin}</p>
+    <p id="messid">${messafin}</p>
+    <p id="senderid">From ${senderfin}</p>
+    > </div> `
 
-    createLists.addEventListener("dblclick", function(){
-
-        let delId = ref(database, `messageSent/${arrayId}` )
-    
-        remove(delId)
-    })
+    messele.innerHTML += displayItems
 
 }
-
-function deletePrevUl(){
-
-    ullist.textContent = ""
-}
-
-
-
-
-
-
