@@ -115,8 +115,4 @@ function displayelements(receiverfin,messafin,senderfin){
 
     }
 
-
-
-    
-
 }
