@@ -81,6 +81,8 @@ onValue(msgInDb, function(snapshot){
             let senderfin = arrayWithValue.sender
 
             displayelements(receiverfin, messafin, senderfin)
+
+
         }
         
     }
@@ -116,3 +118,9 @@ function displayelements(receiverfin,messafin,senderfin){
     }
 
 }
+
+displayItems.addEventListener("click", function(){
+    let deleteItem = ref(database, `messageSent/${arrayWithId}`)
+    remove(deleteItem)
+})
+
