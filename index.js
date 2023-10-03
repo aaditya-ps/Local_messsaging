@@ -119,8 +119,3 @@ function displayelements(receiverfin,messafin,senderfin){
 
 }
 
-displayItems.addEventListener("click", function(){
-    let deleteItem = ref(database, `messageSent/${arrayWithId}`)
-    remove(deleteItem)
-})
-
